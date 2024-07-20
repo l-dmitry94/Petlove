@@ -30,6 +30,9 @@ const theme = createTheme({
         background: {
             default: '#f9f9f9',
         },
+        text: {
+            primary: '#262626',
+        },
     },
     typography: {
         fontFamily: 'Manrope, sans-serif',
@@ -49,7 +52,6 @@ const theme = createTheme({
             fontSize: '0.875rem',
             fontWeight: 500,
             letterSpacing: '-0.02em',
-            color: '#262626',
         },
     },
     breakpoints: {
@@ -89,6 +91,21 @@ const theme = createTheme({
 
             
           `,
+        },
+        MuiContainer: {
+            styleOverrides: {
+                root: {
+                    maxWidth: 375,
+                    padding: '0 20px',
+                    '@media (min-width:768px)': {
+                        maxWidth: 768,
+                        padding: '0 32px',
+                    },
+                    '@media (min-width:1280px)': {
+                        maxWidth: 1280,
+                    },
+                },
+            },
         },
     },
 });
