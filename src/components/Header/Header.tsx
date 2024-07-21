@@ -12,7 +12,9 @@ const Header = () => {
                 position="static"
                 sx={{ bgcolor: 'transparent', boxShadow: 'none' }}
             >
-                <Container sx={{ padding: { desktop: '0 64px' } }}>
+                <Container
+                    sx={{ padding: { desktop: '0 64px' }, maxWidth: 1152 }}
+                >
                     <Toolbar
                         component="div"
                         sx={{ justifyContent: 'space-between' }}
