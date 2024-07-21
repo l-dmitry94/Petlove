@@ -107,6 +107,41 @@ const theme = createTheme({
                 },
             },
         },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    fontWeight: 700,
+                    borderRadius: 30,
+                    boxShadow: 'none',
+                    lineHeight: 1.29,
+                    letterSpacing: '-0.03em',
+                    padding: '12px 0',
+
+                    '&:hover': {
+                        boxShadow: 'none',
+                    },
+                },
+            },
+        },
+        MuiLink: {
+            defaultProps: {
+                underline: 'none',
+            },
+
+            styleOverrides: {
+                root: {
+                    display: 'flex',
+                    justifyContent: 'center',
+                    borderRadius: 30,
+                    textAlign: 'center',
+                    padding: '16px 0',
+                    fontWeight: 500,
+                    lineHeight: 1.29,
+                    letterSpacing: '-0.03em',
+                    transition: 'border-color .3s linear, color .2s linear',
+                },
+            },
+        },
     },
 });
 

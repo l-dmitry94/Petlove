@@ -1,0 +1,14 @@
+[
+    {
+        "label": "News",
+        "href": "/news"
+    },
+    {
+        "label": "Find pet",
+        "href": "/notices"
+    },
+    {
+        "label": "Our friends",
+        "href": "/friends"
+    }
+]

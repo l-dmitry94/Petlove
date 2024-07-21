@@ -18,14 +18,20 @@ const Header = () => {
                         sx={{ justifyContent: 'space-between' }}
                     >
                         <Logo />
-                        <IconButton
-                            size="small"
-                            onClick={() => setMenuIsOpen(true)}
-                        >
-                            <MenuRoundedIcon
-                                sx={{ width: 32, height: 32, fill: '#262626' }}
-                            />
-                        </IconButton>
+                        {!menuIsOpen && (
+                            <IconButton
+                                size="small"
+                                onClick={() => setMenuIsOpen(true)}
+                            >
+                                <MenuRoundedIcon
+                                    sx={{
+                                        width: 32,
+                                        height: 32,
+                                        fill: '#262626',
+                                    }}
+                                />
+                            </IconButton>
+                        )}
                     </Toolbar>
                 </Container>
             </AppBar>

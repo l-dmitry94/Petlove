@@ -8,8 +8,6 @@ const Logo = () => {
             component={RouterLink}
             to="/"
             color="text.primary"
-            underline="none"
-            display="flex"
             alignItems="end"
             sx={{
                 fontWeight: 700,
