@@ -1,0 +1,11 @@
+.burgerButton {
+    &:is(:hover, :focus) {
+        & .burgerIcon {
+            @apply stroke-primary;
+        }
+    }
+}
+
+.burgerIcon {
+    @apply h-8 w-8 stroke-black transition-colors;
+}

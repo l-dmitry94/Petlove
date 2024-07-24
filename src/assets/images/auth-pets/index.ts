@@ -1,0 +1,12 @@
+export { default as cat_mob_1x } from './cat-mob.png';
+export { default as cat_mob_2x } from './cat-mob@2x.png';
+export { default as cat_tab_1x } from './cat-tab.png';
+export { default as cat_tab_2x } from './cat-tab@2x.png';
+export { default as cat_desk_1x } from './cat-desk.png';
+export { default as cat_desk_2x } from './cat-desk@2x.png';
+export { default as dog_mob_1x } from './dog-mob.png';
+export { default as dog_mob_2x } from './dog-mob@2x.png';
+export { default as dog_tab_1x } from './dog-tab.png';
+export { default as dog_tab_2x } from './dog-tab@2x.png';
+export { default as dog_desk_1x } from './dog-desk.png';
+export { default as dog_desk_2x } from './dog-desk@2x.png';

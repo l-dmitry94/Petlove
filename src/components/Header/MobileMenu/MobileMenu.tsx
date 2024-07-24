@@ -1,14 +1,11 @@
 import { FC } from 'react';
-import { Box, Drawer, IconButton } from '@mui/material';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import navigationItems from '../navigation.json';
-import Navigation from '../Navigation';
+import { Drawer } from '@mui/material';
 import Auth from '../Auth';
-
-interface IMobileMenu {
-    menuIsOpen: boolean;
-    closeMenu: () => void;
-}
+import Navigation from '../Navigation';
+import navigationItems from '../navigation.json';
+import { IMobileMenu } from './MobileMenu.types';
+import { icons } from 'assets/icons';
+import scss from './MobileMenu.module.scss';
 
 const MobileMenu: FC<IMobileMenu> = ({ menuIsOpen, closeMenu }) => {
     return (
@@ -18,36 +15,21 @@ const MobileMenu: FC<IMobileMenu> = ({ menuIsOpen, closeMenu }) => {
             anchor="right"
             variant="persistent"
         >
-            <Box
-                component="div"
-                width={218}
-                height="100%"
-                justifyContent="space-between"
-                sx={{ position: 'relative' }}
-            >
-                <IconButton
+            <div className={scss.menu}>
+                <button
+                    type="button"
                     onClick={closeMenu}
-                    color="inherit"
-                    sx={{
-                        position: 'absolute',
-                        top: '20px',
-                        right: '12px',
-                    }}
+                    className={scss.closeButton}
                 >
-                    <CloseRoundedIcon sx={{ width: 32, height: 32 }} />
-                </IconButton>
-                <Box
-                    component="div"
-                    display="flex"
-                    flexDirection="column"
-                    justifyContent="space-between"
-                    height="100%"
-                    padding="150px 20px 40px"
-                >
-                    <Navigation items={navigationItems} />
+                    <svg className={scss.closeIcon}>
+                        <use href={`${icons}#icon-close`}></use>
+                    </svg>
+                </button>
+                <div className={scss.menuContent}>
+                    <Navigation items={navigationItems} closeMenu={closeMenu} />
                     <Auth />
-                </Box>
-            </Box>
+                </div>
+            </div>
         </Drawer>
     );
 };

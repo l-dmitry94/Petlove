@@ -3,7 +3,8 @@ import UserNav from './UserNav';
 import AuthNav from './AuthNav';
 
 const Auth = () => {
-    const [isLogged] = useState<boolean>(false);
+    const [isLogged] = useState(false);
+
     return <>{isLogged ? <UserNav /> : <AuthNav />}</>;
 };
 

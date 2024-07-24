@@ -1,47 +1,49 @@
-import { useState } from 'react';
-import { AppBar, Container, IconButton, Toolbar } from '@mui/material';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { useEffect, useState } from 'react';
+import Container, { ContainerStyle } from 'components/Container';
 import Logo from './Logo';
+import Navigation from './Navigation';
+import BurgerButton from './BurgerButton';
 import MobileMenu from './MobileMenu';
+import { useMedia } from 'hooks/useMedia';
+import navigationItems from './navigation.json';
+import scss from './Header.module.scss';
+import Auth from './Auth';
 
 const Header = () => {
     const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+    const { isMobile, isDesktop } = useMedia();
+
+    useEffect(() => {
+        if (isDesktop) {
+            setMenuIsOpen(false);
+        }
+    }, [isDesktop]);
+
     return (
         <>
-            <AppBar
-                position="static"
-                sx={{ bgcolor: 'transparent', boxShadow: 'none' }}
-            >
-                <Container
-                    sx={{ padding: { desktop: '0 64px' }, maxWidth: 1152 }}
-                >
-                    <Toolbar
-                        component="div"
-                        sx={{ justifyContent: 'space-between' }}
-                    >
+            <header className={scss.header}>
+                <Container style={ContainerStyle.Fluid}>
+                    <div className={scss.headerWrapper}>
                         <Logo />
-                        {!menuIsOpen && (
-                            <IconButton
-                                size="small"
-                                onClick={() => setMenuIsOpen(true)}
-                            >
-                                <MenuRoundedIcon
-                                    sx={{
-                                        width: 32,
-                                        height: 32,
-                                        fill: '#262626',
-                                    }}
+                        {isDesktop && <Navigation items={navigationItems} />}
+                        <div className={scss.headerRight}>
+                            {!isMobile && <Auth />}
+                            {!isDesktop && (
+                                <BurgerButton
+                                    onClick={() => setMenuIsOpen(true)}
                                 />
-                            </IconButton>
-                        )}
-                    </Toolbar>
+                            )}
+                        </div>
+                    </div>
                 </Container>
-            </AppBar>
+            </header>
 
-            <MobileMenu
-                menuIsOpen={menuIsOpen}
-                closeMenu={() => setMenuIsOpen(false)}
-            />
+            {!isDesktop && (
+                <MobileMenu
+                    menuIsOpen={menuIsOpen}
+                    closeMenu={() => setMenuIsOpen(false)}
+                />
+            )}
         </>
     );
 };

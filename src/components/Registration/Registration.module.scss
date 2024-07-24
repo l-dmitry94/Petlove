@@ -1,0 +1,16 @@
+.registration {
+    @apply py-5;
+}
+
+.formWrapper {
+    @apply mb-6 flex flex-col gap-[10px];
+}
+
+.label {
+    @apply mt-3 text-center text-xs font-medium leading-[1.17] tracking-[-0.03em] text-black/50;
+
+    & .link {
+        @apply font-bold text-primary underline;
+        text-decoration-skip-ink: none;
+    }
+}

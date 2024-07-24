@@ -1,45 +1,19 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Box, Link, Stack } from '@mui/material';
+import { INavigation } from './Navigation.types';
+import scss from './Navigation.module.scss';
 
-interface INavigationItem {
-    label: string;
-    href: string;
-}
-
-interface INavigation {
-    items: INavigationItem[];
-}
-
-const Navigation: FC<INavigation> = ({ items }) => {
+const Navigation: FC<INavigation> = ({ items, closeMenu }) => {
     return (
-        <Box component="nav" display="flex" justifyContent="center">
-            <Stack spacing={1}>
-                {items.map(({ label, href }) => (
-                    <Link
-                        component={NavLink}
-                        to={href}
-                        key={label}
-                        width={119}
-                        height={48}
-                        alignItems="center"
-                        color="text.primary"
-                        border="1px solid rgba(38, 38, 38, 0.15)"
-                        sx={{
-                            '&.active': {
-                                borderColor: 'primary.main',
-                            },
-                            '&:hover': {
-                                borderColor: 'primary.main',
-                                color: 'primary.main',
-                            },
-                        }}
-                    >
+        <ul className={scss.navigationList}>
+            {items.map(({ label, href }) => (
+                <li key={label} onClick={closeMenu}>
+                    <NavLink to={href} className={scss.navigationItem}>
                         {label}
-                    </Link>
-                ))}
-            </Stack>
-        </Box>
+                    </NavLink>
+                </li>
+            ))}
+        </ul>
     );
 };
 

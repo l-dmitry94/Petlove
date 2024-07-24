@@ -1,0 +1,29 @@
+@import "styles/mixins";
+
+.navigationList {
+    @apply flex flex-col items-center gap-[10px];
+
+    @include media-rules(desktop) {
+        @apply flex-row
+    }
+}
+
+.navigationItem {
+    @apply rounded-custom inline-block min-w-[119px] border border-black/15 py-4 text-center font-medium leading-tight tracking-[-0.03em] transition-colors;
+
+    &:hover {
+        @apply border-primary text-primary;
+    }
+
+    &:global(.active) {
+        @apply border-primary;
+    }
+
+    @include media-rules(tablet) {
+        @apply text-base leading-[1.25]
+    }
+
+    @include media-rules(desktop) {
+        @apply px-5 min-w-max 
+    }
+}

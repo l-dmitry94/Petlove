@@ -1,26 +1,16 @@
-import { Button, Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
+import Button, { ButtonStyles } from 'components/Button';
+import scss from './AuthNav.module.scss';
 
 const AuthNav = () => {
     return (
-        <Stack spacing={1}>
-            <Button
-                variant="contained"
-                component={Link}
-                to="login"
-                color="primary"
-            >
-                Log In
+        <div className={scss.buttonGroup}>
+            <Button styleType={ButtonStyles.Primary} href="login">
+                Log in
             </Button>
-            <Button
-                variant="contained"
-                component={Link}
-                to="register"
-                color="secondary"
-            >
+            <Button styleType={ButtonStyles.Secondary} href="register">
                 Registration
             </Button>
-        </Stack>
+        </div>
     );
 };
 

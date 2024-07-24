@@ -1,0 +1,63 @@
+@import 'styles/mixins';
+
+.imageWrapper {
+    @apply relative rounded-custom bg-primary bg-[url('assets/images/auth-pets/bg-mob.png')] bg-full bg-right-bottom bg-no-repeat mb-[10px];
+
+    @include media-rules(mobile) {
+        @apply bg-auto;
+    }
+
+    @include media-rules(tablet) {
+        @apply bg-[url('assets/images/auth-pets/bg-tab.png')] bg-bottom mb-4;
+    }
+
+    @include media-rules(desktop) {
+        @apply bg-[url('assets/images/auth-pets/bg-desk.png')] mb-0;
+    }
+}
+
+.image {
+    @include media-rules(tablet) {
+        @apply pl-[250px];
+    }
+
+    @include media-rules(desktop) {
+        @apply mx-auto pl-0;
+    }
+}
+
+.petInfoWrapper {
+    @apply absolute bottom-8 left-8 inline-flex gap-2 rounded-[20px] bg-white px-4 py-[1.125rem] pt-4;
+
+    @include media-rules(desktop) {
+        @apply bottom-24 left-16;
+    }
+}
+
+.petImageWrapper {
+    @apply flex h-[60px] w-[60px] items-center justify-center rounded-full bg-secondary;
+}
+
+.petInfo {
+    @apply w-[206px];
+}
+
+.petInfoHeader {
+    @apply mb-2 flex items-center justify-between;
+}
+
+.petName {
+    @apply text-base font-bold leading-[1.25] tracking-[-0.03em] text-primary;
+}
+
+.petBirthday {
+    @apply flex items-center gap-1 text-xs font-medium leading-[1.17] tracking-tight;
+}
+
+.petBirthdayTitle {
+    @apply text-black/50;
+}
+
+.petDescription {
+    @apply text-xs font-medium leading-[1.17] tracking-tight text-black/80;
+}

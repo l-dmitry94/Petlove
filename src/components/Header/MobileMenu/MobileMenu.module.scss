@@ -1,0 +1,27 @@
+@import "styles/mixins";
+
+.menu {
+    @apply relative h-full w-[218px] px-5 pb-10 pt-[150px];
+
+    @include media-rules(tablet) {
+        @apply w-[374px] px-[49px]
+    }
+}
+
+.closeButton {
+    @apply absolute right-5 top-7;
+
+    &:is(:hover, :focus) {
+        & .closeIcon {
+            @apply stroke-primary;
+        }
+    }
+}
+
+.closeIcon {
+    @apply h-8 w-8 stroke-black transition-colors;
+}
+
+.menuContent {
+    @apply relative flex h-full flex-col justify-between;
+}

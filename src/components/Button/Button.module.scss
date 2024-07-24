@@ -1,0 +1,25 @@
+@import 'styles/mixins';
+
+.button {
+    @apply rounded-custom flex h-[42px] w-full items-center justify-center text-center font-bold uppercase transition-colors;
+
+    @include media-rules(tablet) {
+        @apply text-base;
+    }
+}
+
+.buttonPrimary {
+    @apply bg-primary px-9 text-white;
+
+    &:is(:hover, :focus) {
+        @apply bg-primary-dark;
+    }
+}
+
+.buttonSecondary {
+    @apply bg-secondary px-5 text-primary;
+
+    &:is(:hover, :focus) {
+        @apply bg-secondary-dark;
+    }
+}

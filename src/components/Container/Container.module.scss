@@ -1,0 +1,29 @@
+@import 'styles/mixins';
+
+.container {
+    @apply mx-auto;
+}
+
+.containerPrimary {
+    @apply max-w-screen-mobile px-5;
+
+    @include media-rules(tablet) {
+        @apply max-w-screen-tablet px-8;
+    }
+
+    @include media-rules(desktop) {
+        @apply max-w-screen-desktop;
+    }
+}
+
+.containerFluid {
+    @apply max-w-screen-desktop px-5;
+
+    @include media-rules(tablet) {
+        @apply px-8;
+    }
+
+    @include media-rules(desktop) {
+        @apply px-16;
+    }
+}

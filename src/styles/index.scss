@@ -1,0 +1,10 @@
+@import 'fonts';
+@import 'reset';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-background font-manrope text-[0.875rem] text-black;
+}

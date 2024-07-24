@@ -1,0 +1,15 @@
+.authForm {
+    @apply rounded-custom bg-white px-5 py-7;
+}
+
+.authInfo {
+    @apply mb-5;
+}
+
+.title {
+    @apply mb-3 text-[28px] font-bold leading-none tracking-[-0.04em];
+}
+
+.description {
+    @apply font-medium leading-tight tracking-tight;
+}

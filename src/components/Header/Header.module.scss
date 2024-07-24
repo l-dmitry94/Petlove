@@ -1,0 +1,11 @@
+.header {
+    @apply pt-7;
+}
+
+.headerWrapper {
+    @apply flex items-center justify-between;
+}
+
+.headerRight {
+    @apply flex gap-4;
+}

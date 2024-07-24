@@ -1,0 +1,17 @@
+@import 'styles/mixins';
+
+.logo {
+    @apply flex items-end pb-1 text-xl font-bold leading-none tracking-[-0.04em];
+
+    @include media-rules(tablet) {
+        @apply text-[28px];
+    }
+}
+
+.heartIcon {
+    @apply h-4 w-4 fill-primary;
+
+    @include media-rules(tablet) {
+        @apply h-6 w-6;
+    }
+}

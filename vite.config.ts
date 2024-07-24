@@ -14,7 +14,6 @@ export default defineConfig({
             helpers: '/src/helpers',
             styles: '/src/styles',
             hooks: '/src/hooks',
-            constants: '/src/constants',
         },
     },
     base: '/Petlove',

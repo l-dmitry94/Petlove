@@ -1,0 +1,23 @@
+.input {
+    @apply h-[42px] w-full rounded-custom border border-black/15 px-3 outline-none transition-colors font-medium leading-tight tracking-[-0.03em];
+
+    &:focus {
+        @apply border-primary;
+    }
+
+    &::placeholder {
+        @apply text-black/50
+    }
+}
+
+.wrapper {
+    @apply relative;
+}
+
+.passwordButton {
+    @apply absolute right-3 top-1/2 -translate-y-1/2;
+}
+
+.passwordIcon {
+    @apply fill-none stroke-primary;
+}
