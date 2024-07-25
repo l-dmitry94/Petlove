@@ -1,3 +1,5 @@
+@import "styles/mixins";
+
 .input {
     @apply h-[42px] w-full rounded-custom border border-black/15 px-3 outline-none transition-colors font-medium leading-tight tracking-[-0.03em];
 
@@ -8,6 +10,26 @@
     &::placeholder {
         @apply text-black/50
     }
+
+    @include media-rules(tablet) {
+        @apply h-[52px] px-4 text-base leading-[1.25] tracking-[-0.03em] 
+    }
+}
+
+.inputError {
+    @apply border-error
+}
+
+.inputValid {
+    @apply border-success
+}
+
+.successIcon {
+    @apply stroke-success fill-none absolute right-3 top-1/2 -translate-y-1/2
+}
+
+.errorIcon {
+    @apply stroke-error fill-none absolute right-3 top-1/2 -translate-y-1/2
 }
 
 .wrapper {
@@ -16,8 +38,16 @@
 
 .passwordButton {
     @apply absolute right-3 top-1/2 -translate-y-1/2;
+
+    @include media-rules(tablet) {
+        @apply right-4
+    }
 }
 
 .passwordIcon {
-    @apply fill-none stroke-primary;
+    @apply fill-none stroke-primary w-[18px] h-[18px];
+
+    @include media-rules(tablet) {
+        @apply w-[22px] h-[22px]
+    }
 }

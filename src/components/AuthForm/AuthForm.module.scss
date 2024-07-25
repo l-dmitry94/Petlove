@@ -1,15 +1,50 @@
+@import "styles/mixins";
+
 .authForm {
-    @apply rounded-custom bg-white px-5 py-7;
+    @apply rounded-custom bg-white px-5 py-7 flex flex-col justify-center;
+
+    @include media-rules(tablet) {
+        @apply py-[70px] px-[140px] flex-grow
+    }
+
+    @include media-rules(desktop) {
+        @apply py-[118px] px-[84px]
+    }
 }
 
 .authInfo {
     @apply mb-5;
+
+    @include media-rules(tablet) {
+        @apply mb-8
+    }
 }
 
 .title {
     @apply mb-3 text-[28px] font-bold leading-none tracking-[-0.04em];
+
+    @include media-rules(tablet) {
+        @apply text-[54px] mb-4
+    }
 }
 
 .description {
     @apply font-medium leading-tight tracking-tight;
+
+    @include media-rules(tablet) {
+        @apply text-lg leading-[1.22]
+    }
+}
+
+.label {
+    @apply mt-3 text-center text-xs font-medium leading-[1.17] tracking-[-0.03em] text-black/50;
+
+    @include media-rules(tablet) {
+        @apply text-sm leading-[1.43];
+    }
+
+    & .link {
+        @apply font-bold text-primary underline;
+        text-decoration-skip-ink: none;
+    }
 }

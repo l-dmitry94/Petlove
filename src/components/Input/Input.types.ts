@@ -5,5 +5,6 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
     register: UseFormRegister<any>;
     name: string;
     error: string;
+    dirtyFields?: boolean;
     type: HTMLInputTypeAttribute;
 }

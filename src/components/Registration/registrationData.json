@@ -1,0 +1,22 @@
+[
+    {
+        "type": "text",
+        "name": "name",
+        "placeholder": "Name"
+    },
+    {
+        "type": "text",
+        "name": "email",
+        "placeholder": "Email"
+    },
+    {
+        "type": "password",
+        "name": "password",
+        "placeholder": "Password"
+    },
+    {
+        "type": "password",
+        "name": "confirmPassword",
+        "placeholder": "Confirm password"
+    }
+]

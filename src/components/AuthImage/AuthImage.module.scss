@@ -12,7 +12,7 @@
     }
 
     @include media-rules(desktop) {
-        @apply bg-[url('assets/images/auth-pets/bg-desk.png')] mb-0;
+        @apply bg-[url('assets/images/auth-pets/bg-desk.png')] mb-0 min-w-[592px];
     }
 }
 

@@ -13,10 +13,10 @@ import {
     dog_tab_1x,
     dog_tab_2x,
 } from 'assets/images/auth-pets';
+import { cat_1x, cat_2x, dog_1x, dog_2x } from 'assets/images';
+import { useMedia } from 'hooks/useMedia';
 import { IAuthImage, Pet } from './AuthImage.types';
 import scss from './AuthImage.module.scss';
-import { useMedia } from 'hooks/useMedia';
-import { cat_1x, cat_2x, dog_1x, dog_2x } from 'assets/images';
 
 const AuthImage: FC<IAuthImage> = ({ pet }) => {
     const { isMobile } = useMedia();
@@ -24,7 +24,7 @@ const AuthImage: FC<IAuthImage> = ({ pet }) => {
         <div className={scss.imageWrapper}>
             <picture>
                 <source
-                    media="(min-width: 1028px)"
+                    media="(min-width: 1280px)"
                     srcSet={
                         pet === Pet.Cat
                             ? `${cat_desk_1x} 1x, ${cat_desk_2x} 2x`
