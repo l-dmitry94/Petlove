@@ -2,6 +2,10 @@
 
 .login {
     @apply py-5;
+
+    @include media-rules(tablet) {
+        @apply py-8
+    }
 }
 
 .loginWrapper {
